@@ -224,7 +224,7 @@ if __name__ == "__main__":
         for i in range(0, 5):
             pokemon = pokemons[i]
             _name = POKEMON_NAME[pokemon['id']]
-            _types = POKEMON_TYPE[pokemon['id']]
+            _types = POKEMON_TYPE[pokemon['id']][pokemon['form']]
             print("{}위 - {} ({})".format(i + 1, _name, ', '.join([TYPE_NAME[x] for x in _types])))
         print("#" * 48)
         print('')
@@ -242,7 +242,7 @@ if __name__ == "__main__":
     
     pokemon = pokemons[0]
     print("이름:", POKEMON_NAME[pokemon['id']])
-    print("타입:", ''.join([TYPE_NAME[x] for x in POKEMON_TYPE[pokemon['id']]]))
+    print("타입:", ''.join([TYPE_NAME[x] for x in POKEMON_TYPE[pokemon['id']][pokemon['form']]]))
     
     details = get_pokemon_details(match)
     detail = details[str(pokemon['id'])][str(pokemon['form'])]
@@ -288,7 +288,7 @@ if __name__ == "__main__":
     won_skills = win['waza']
     for i in range(0, len(won_skills)):
         won_skill = won_skills[i]
-        print("{}위 - {} ({}%)".format(i + 1, ITEM_NAME[int(won_skill['id'])], won_skill['val']))
+        print("{}위 - {} ({}%)".format(i + 1, SKILL_NAME[int(won_skill['id'])], won_skill['val']))
     print('')
     
     lose = detail['lose']
@@ -303,6 +303,6 @@ if __name__ == "__main__":
     lost_skills = lose['waza']
     for i in range(0, len(lost_skills)):
         lost_skill = lost_skills[i]
-        print("{}위 - {} ({}%)".format(i + 1, ITEM_NAME[int(lost_skill['id'])], lost_skill['val']))
+        print("{}위 - {} ({}%)".format(i + 1, SKILL_NAME[int(lost_skill['id'])], lost_skill['val']))
     print('')
     
