@@ -141,7 +141,7 @@ if __name__ == "__main__":
     #                   -> TYPE_NAME[0] => '노말'
     #                   -> TYPE_NAME[17] => '페어리'
     #
-    # POKEMON_NAME[도감번호] -> 포켓몬 이름 (도감번호 - 1)
+    # POKEMON_NAME[도감번호] -> 포켓몬 이름 (도감번호)
     #               -> POKEMON_NAME[1] => '이상해씨'
     #               -> POKEMON_NAME[892] => '우라오스'
     #
